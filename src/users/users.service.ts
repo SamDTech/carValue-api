@@ -26,7 +26,7 @@ export class UsersService {
     return user;
   }
 
-  find(email) {
+  find(email: string) {
     return this.userRepo.find({ email });
   }
 
