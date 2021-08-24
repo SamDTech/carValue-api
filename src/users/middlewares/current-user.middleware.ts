@@ -14,7 +14,7 @@ declare global {
 export class CurrentUserMiddleware implements NestMiddleware {
   constructor(private usersService: UsersService){}
  async use(req: any, res: any, next: () => void) {
-   const {userId} = req?.session
+   const {userId} = req?.session || {}
 
    if(userId){
      const user = await this.usersService.findOne(userId)
